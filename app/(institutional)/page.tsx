@@ -63,7 +63,7 @@ export default function HomePage() {
           </div>
           <div className="glass-panel overflow-hidden rounded-3xl border p-2 shadow-[0_18px_44px_rgba(15,23,42,0.08)]">
             <Image
-              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=80"
+              src="/imagens/imagem.png"
               alt="Laboratorio moderno"
               width={900}
               height={700}
