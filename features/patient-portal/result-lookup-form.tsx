@@ -25,6 +25,34 @@ type ResultItem = {
   patient_name: string;
 };
 
+function formatBirthDateMask(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 8);
+
+  if (digits.length <= 2) {
+    return digits;
+  }
+
+  if (digits.length <= 4) {
+    return `${digits.slice(0, 2)}/${digits.slice(2)}`;
+  }
+
+  return `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+}
+
+function toApiBirthDate(value: string) {
+  const normalized = value.replace(/\D/g, "");
+
+  if (normalized.length !== 8) {
+    return "";
+  }
+
+  const day = normalized.slice(0, 2);
+  const month = normalized.slice(2, 4);
+  const year = normalized.slice(4, 8);
+
+  return `${year}-${month}-${day}`;
+}
+
 export function ResultLookupForm() {
   const [results, setResults] = useState<ResultItem[] | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -37,8 +65,11 @@ export function ResultLookupForm() {
   });
 
   const cpfField = form.register("cpf");
+  const birthDateField = form.register("birth_date");
 
   function onSubmit(values: LookupFormData) {
+    const birthDate = toApiBirthDate(values.birth_date);
+
     startTransition(async () => {
       const response = await fetch("/api/results/lookup", {
         method: "POST",
@@ -47,7 +78,7 @@ export function ResultLookupForm() {
         },
         body: JSON.stringify({
           cpf: onlyDigits(values.cpf),
-          birthDate: values.birth_date,
+          birthDate,
         }),
       });
 
@@ -74,7 +105,7 @@ export function ResultLookupForm() {
       },
       body: JSON.stringify({
         cpf: onlyDigits(form.getValues("cpf")),
-        birthDate: form.getValues("birth_date"),
+        birthDate: toApiBirthDate(form.getValues("birth_date")),
       }),
     });
 
@@ -117,7 +148,20 @@ export function ResultLookupForm() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="birth_date">Data de nascimento</Label>
-              <Input id="birth_date" type="date" {...form.register("birth_date")} />
+              <Input
+                id="birth_date"
+                type="text"
+                inputMode="numeric"
+                placeholder="dd/mm/aaaa"
+                maxLength={10}
+                {...birthDateField}
+                onChange={(event) => {
+                  birthDateField.onChange(event);
+                  form.setValue("birth_date", formatBirthDateMask(event.target.value), {
+                    shouldValidate: true,
+                  });
+                }}
+              />
               <p className="text-xs text-destructive">{form.formState.errors.birth_date?.message}</p>
             </div>
             <div className="flex items-end">
