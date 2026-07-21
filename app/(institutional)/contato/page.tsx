@@ -10,7 +10,7 @@ import { LAB_INFO } from "@/lib/lab-info";
 
 export const metadata: Metadata = {
   title: "Contato",
-  description: "Fale com o Helena Doris por WhatsApp, telefone ou formulario.",
+  description: "Fale com o Helena Doris por WhatsApp, telefone ou formulário.",
 };
 
 export default function ContatoPage() {
@@ -29,7 +29,7 @@ export default function ContatoPage() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Horario</CardTitle>
+            <CardTitle>Horário</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-muted-foreground">
             <p className="flex items-center gap-2"><Clock3 className="h-4 w-4 text-[var(--brand)]" /> {LAB_INFO.hours.weekdays}</p>
@@ -54,7 +54,7 @@ export default function ContatoPage() {
         </Card>
 
         <Card>
-          <CardHeader><CardTitle>Formulario</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Formulário</CardTitle></CardHeader>
           <CardContent>
             <form className="space-y-3">
               <div className="space-y-1">

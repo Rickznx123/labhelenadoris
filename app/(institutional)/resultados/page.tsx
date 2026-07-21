@@ -13,7 +13,7 @@ export default function ResultadosPage() {
       <div className="mx-auto max-w-3xl text-center">
         <h1 className="font-display text-5xl">Consulte seus resultados</h1>
         <p className="mt-3 text-muted-foreground">
-          Informe CPF e data de nascimento para visualizar os exames disponiveis.
+          Informe CPF e data de nascimento para visualizar os exames disponíveis.
         </p>
       </div>
       <div className="mx-auto max-w-5xl">

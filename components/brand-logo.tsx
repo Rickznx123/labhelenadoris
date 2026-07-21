@@ -28,7 +28,7 @@ export function BrandLogo({
     <div className={cn("flex items-center gap-3", className)}>
       <Image
         src="/LOGO-HELENA-DORIS.png"
-        alt="Helena Doris Laboratorio de Analises Clinicas"
+        alt="Helena Doris Laboratório de Análises Clínicas"
         width={dims.w}
         height={dims.h}
         priority
@@ -36,7 +36,7 @@ export function BrandLogo({
       {showText ? (
         <span className={cn("font-semibold text-sm leading-tight", textClassName)}>
           Helena Doris<br />
-          Laboratorio de Analises Clinicas
+          Laboratório de Análises Clínicas
         </span>
       ) : null}
     </div>

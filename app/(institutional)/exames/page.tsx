@@ -13,15 +13,15 @@ const exams = [
 
 export const metadata: Metadata = {
   title: "Exames",
-  description: "Conheca as principais areas de exames laboratoriais do Helena Doris.",
+  description: "Conheça as principais áreas de exames laboratoriais do Helena Doris.",
 };
 
 export default function ExamesPage() {
   return (
     <Container className="space-y-8 py-16">
-      <h1 className="font-display text-5xl">Areas de exames</h1>
+      <h1 className="font-display text-5xl">Áreas de exames</h1>
       <p className="max-w-3xl text-muted-foreground">
-        Estrutura tecnica para atender desde exames de rotina ate analises especializadas com precisao e seguranca.
+        Estrutura técnica para atender desde exames de rotina até análises especializadas com precisão e segurança.
       </p>
       <div className="grid gap-4 md:grid-cols-3">
         {exams.map((exam) => (

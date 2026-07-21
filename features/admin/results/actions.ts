@@ -29,11 +29,11 @@ function validatePdfFile(pdf: File, required = true) {
   const extension = pdf.name.split(".").pop()?.toLowerCase();
   const isPdfMime = pdf.type === "application/pdf" || pdf.type === "";
   if (extension !== "pdf" || !isPdfMime) {
-    throw new Error("Apenas arquivos PDF sao permitidos.");
+    throw new Error("Apenas arquivos PDF são permitidos.");
   }
 
   if (pdf.size > MAX_PDF_SIZE_BYTES) {
-    throw new Error("O arquivo PDF deve ter no maximo 20 MB.");
+    throw new Error("O arquivo PDF deve ter no máximo 20 MB.");
   }
 }
 
@@ -48,7 +48,7 @@ async function uploadPdf(cpf: string, pdf: File) {
   });
 
   if (upload.error) {
-    throw new Error("Nao foi possivel enviar o PDF. Tente novamente.");
+    throw new Error("Não foi possível enviar o PDF. Tente novamente.");
   }
 
   return path;
@@ -67,7 +67,7 @@ export async function createExamResultAction(formData: FormData) {
 
   const parsed = examResultCreateSchema.safeParse(payload);
   if (!parsed.success) {
-    throw new Error(parsed.error.issues[0]?.message ?? "Dados invalidos");
+    throw new Error(parsed.error.issues[0]?.message ?? "Dados inválidos");
   }
 
   const pdf = formData.get("pdf");
@@ -93,7 +93,7 @@ export async function createExamResultAction(formData: FormData) {
 
   if (inserted.error || !inserted.data) {
     await supabase.storage.from("exam-results").remove([path]);
-    throw new Error(inserted.error?.message ?? "Nao foi possivel cadastrar o resultado.");
+    throw new Error(inserted.error?.message ?? "Não foi possível cadastrar o resultado.");
   }
 
   revalidatePath("/admin/resultados");
@@ -105,7 +105,7 @@ export async function updateExamResultAction(formData: FormData) {
   const id = String(formData.get("id") || "");
 
   if (!id) {
-    throw new Error("Resultado invalido para edicao.");
+    throw new Error("Resultado inválido para edição.");
   }
 
   const payload = {
@@ -118,12 +118,12 @@ export async function updateExamResultAction(formData: FormData) {
 
   const parsed = examResultCreateSchema.safeParse(payload);
   if (!parsed.success) {
-    throw new Error(parsed.error.issues[0]?.message ?? "Dados invalidos");
+    throw new Error(parsed.error.issues[0]?.message ?? "Dados inválidos");
   }
 
   const current = await supabase.from("exam_results").select("id, pdf_path").eq("id", id).single();
   if (current.error || !current.data) {
-    throw new Error("Resultado nao encontrado.");
+    throw new Error("Resultado não encontrado.");
   }
 
   const pdf = formData.get("pdf");
@@ -156,7 +156,7 @@ export async function updateExamResultAction(formData: FormData) {
     if (uploadedNewPdfPath) {
       await supabase.storage.from("exam-results").remove([uploadedNewPdfPath]);
     }
-    throw new Error(updated.error?.message ?? "Nao foi possivel atualizar o resultado.");
+    throw new Error(updated.error?.message ?? "Não foi possível atualizar o resultado.");
   }
 
   if (uploadedNewPdfPath && current.data.pdf_path) {
@@ -168,7 +168,7 @@ export async function updateExamResultAction(formData: FormData) {
         .update({ pdf_path: current.data.pdf_path })
         .eq("id", id);
       await supabase.storage.from("exam-results").remove([uploadedNewPdfPath]);
-      throw new Error("Nao foi possivel substituir o PDF antigo. Tente novamente.");
+      throw new Error("Não foi possível substituir o PDF antigo. Tente novamente.");
     }
   }
 
@@ -180,7 +180,7 @@ export async function deleteExamResultAction(id: string) {
   const supabase = getSupabaseAdmin();
 
   if (!id) {
-    throw new Error("Resultado invalido para exclusao.");
+    throw new Error("Resultado inválido para exclusão.");
   }
 
   const current = await supabase
@@ -190,12 +190,12 @@ export async function deleteExamResultAction(id: string) {
     .single();
 
   if (current.error || !current.data) {
-    throw new Error("Resultado nao encontrado.");
+    throw new Error("Resultado não encontrado.");
   }
 
   const deleted = await supabase.from("exam_results").delete().eq("id", id);
   if (deleted.error) {
-    throw new Error("Nao foi possivel excluir o resultado.");
+    throw new Error("Não foi possível excluir o resultado.");
   }
 
   const removedPdf = await supabase.storage.from("exam-results").remove([current.data.pdf_path]);

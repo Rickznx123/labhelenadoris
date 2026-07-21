@@ -22,16 +22,16 @@ export function SettingsForm({ settings }: SettingsFormProps) {
         startTransition(async () => {
           try {
             await saveSettingsAction(formData);
-            toast.success("Configuracoes salvas com sucesso.");
+            toast.success("Configurações salvas com sucesso.");
           } catch (error) {
-            toast.error(error instanceof Error ? error.message : "Falha ao salvar configuracoes.");
+            toast.error(error instanceof Error ? error.message : "Falha ao salvar configurações.");
           }
         });
       }}
     >
       <input type="hidden" name="id" defaultValue={settings?.id ?? ""} />
       <div className="space-y-2 md:col-span-2">
-        <Label htmlFor="lab_name">Nome do laboratorio</Label>
+        <Label htmlFor="lab_name">Nome do laboratório</Label>
         <Input id="lab_name" name="lab_name" defaultValue={settings?.lab_name} required />
       </div>
       <div className="space-y-2">
@@ -43,7 +43,7 @@ export function SettingsForm({ settings }: SettingsFormProps) {
         <Input id="whatsapp" name="whatsapp" defaultValue={settings?.whatsapp ?? ""} />
       </div>
       <div className="space-y-2 md:col-span-2">
-        <Label htmlFor="address">Endereco</Label>
+        <Label htmlFor="address">Endereço</Label>
         <Input id="address" name="address" defaultValue={settings?.address ?? ""} />
       </div>
       <div className="space-y-2 md:col-span-2">
@@ -63,7 +63,7 @@ export function SettingsForm({ settings }: SettingsFormProps) {
         <Input id="linkedin" name="linkedin" defaultValue={settings?.linkedin ?? ""} />
       </div>
       <div className="md:col-span-2">
-        <Button type="submit" disabled={pending}>Salvar configuracoes</Button>
+        <Button type="submit" disabled={pending}>Salvar configurações</Button>
       </div>
     </form>
   );

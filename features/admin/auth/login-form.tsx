@@ -30,7 +30,7 @@ export function LoginForm() {
     setLoading(false);
 
     if (error) {
-      toast.error("Credenciais invalidas.");
+      toast.error("Credenciais inválidas.");
       return;
     }
 

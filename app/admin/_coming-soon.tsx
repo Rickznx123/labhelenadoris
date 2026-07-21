@@ -16,7 +16,7 @@ export function ComingSoonAdmin({ title }: ComingSoonAdminProps) {
         </CardHeader>
         <CardContent className="text-center">
           <p className="text-muted-foreground">
-            Esta funcionalidade interna sera disponibilizada em uma segunda fase do projeto.
+            Esta funcionalidade interna será disponibilizada em uma segunda fase do projeto.
           </p>
           <Button asChild className="mt-6">
             <Link href="/">Voltar para o site</Link>

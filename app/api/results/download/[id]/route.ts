@@ -28,7 +28,7 @@ export async function POST(request: Request, { params }: Params) {
   });
 
   if (!parsed.success) {
-    return NextResponse.json({ error: parsed.error.issues[0]?.message ?? "Dados invalidos" }, { status: 400 });
+    return NextResponse.json({ error: parsed.error.issues[0]?.message ?? "Dados inválidos" }, { status: 400 });
   }
 
   const supabase = getSupabaseAdmin();
@@ -41,7 +41,7 @@ export async function POST(request: Request, { params }: Params) {
     .single();
 
   if (record.error || !record.data?.pdf_path) {
-    return NextResponse.json({ error: "Resultado nao encontrado" }, { status: 404 });
+    return NextResponse.json({ error: "Resultado não encontrado" }, { status: 404 });
   }
 
   const signed = await supabase.storage

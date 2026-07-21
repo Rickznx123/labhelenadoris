@@ -33,7 +33,7 @@ export function NewResultForm({ onCreated }: NewResultFormProps) {
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>Resultados enviados</CardTitle>
         <Button type="button" onClick={() => setOpen((state) => !state)}>
-          {open ? "Fechar" : "Novo Resultado"}
+          {open ? "Fechar" : "Novo resultado"}
         </Button>
       </CardHeader>
       {open ? (
@@ -100,12 +100,12 @@ export function NewResultForm({ onCreated }: NewResultFormProps) {
                   }
                   const extension = file.name.split(".").pop()?.toLowerCase();
                   if (extension !== "pdf") {
-                    toast.error("Selecione um arquivo PDF valido.");
+                    toast.error("Selecione um arquivo PDF válido.");
                     event.currentTarget.value = "";
                     return;
                   }
                   if (file.size > MAX_PDF_SIZE_BYTES) {
-                    toast.error("O PDF deve ter no maximo 20 MB.");
+                    toast.error("O PDF deve ter no máximo 20 MB.");
                     event.currentTarget.value = "";
                   }
                 }}

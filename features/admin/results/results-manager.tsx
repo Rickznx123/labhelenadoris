@@ -70,10 +70,10 @@ export function ResultsManager({ initialResults }: ResultsManagerProps) {
         await deleteExamResultAction(result.id);
         setResults((prev) => prev.filter((item) => item.id !== result.id));
         setEditingId((current) => (current === result.id ? null : current));
-        toast.success("Resultado excluido com sucesso.");
+        toast.success("Resultado excluído com sucesso.");
         router.refresh();
       } catch (error) {
-        toast.error(error instanceof Error ? error.message : "Nao foi possivel excluir o resultado.");
+        toast.error(error instanceof Error ? error.message : "Não foi possível excluir o resultado.");
       }
     });
   }
@@ -92,11 +92,11 @@ export function ResultsManager({ initialResults }: ResultsManagerProps) {
     if (pdf instanceof File && pdf.size > 0) {
       const extension = pdf.name.split(".").pop()?.toLowerCase();
       if (extension !== "pdf") {
-        toast.error("Selecione um arquivo PDF valido.");
+        toast.error("Selecione um arquivo PDF válido.");
         return;
       }
       if (pdf.size > MAX_PDF_SIZE_BYTES) {
-        toast.error("O PDF deve ter no maximo 20 MB.");
+        toast.error("O PDF deve ter no máximo 20 MB.");
         return;
       }
     }
@@ -109,7 +109,7 @@ export function ResultsManager({ initialResults }: ResultsManagerProps) {
         toast.success("Resultado atualizado com sucesso.");
         router.refresh();
       } catch (error) {
-        toast.error(error instanceof Error ? error.message : "Nao foi possivel atualizar o resultado.");
+        toast.error(error instanceof Error ? error.message : "Não foi possível atualizar o resultado.");
       }
     });
   }
@@ -147,7 +147,7 @@ export function ResultsManager({ initialResults }: ResultsManagerProps) {
                   <TableHead>Exame</TableHead>
                   <TableHead>Data do exame</TableHead>
                   <TableHead>Enviado em</TableHead>
-                  <TableHead>Acoes</TableHead>
+                  <TableHead>Ações</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -227,7 +227,7 @@ export function ResultsManager({ initialResults }: ResultsManagerProps) {
                               </div>
                               <div className="md:col-span-2 flex gap-2">
                                 <Button type="submit" disabled={isMutating}>
-                                  {isMutating ? "Salvando..." : "Salvar alteracoes"}
+                                  {isMutating ? "Salvando..." : "Salvar alterações"}
                                 </Button>
                                 <Button
                                   type="button"

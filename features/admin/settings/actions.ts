@@ -20,7 +20,7 @@ export async function saveSettingsAction(formData: FormData) {
   });
 
   if (!parsed.success) {
-    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validacao");
+    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validação");
   }
 
   const settingsId = String(formData.get("id") || "");

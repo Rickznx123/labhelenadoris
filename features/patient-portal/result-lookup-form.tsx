@@ -56,7 +56,7 @@ export function ResultLookupForm() {
         const message =
           typeof errorBody?.error === "string"
             ? errorBody.error
-            : errorBody?.error?.message || "Nao foi possivel consultar os resultados.";
+            : errorBody?.error?.message || "Não foi possível consultar os resultados.";
         toast.error(message);
         return;
       }
@@ -83,7 +83,7 @@ export function ResultLookupForm() {
       const message =
         typeof errorBody?.error === "string"
           ? errorBody.error
-          : errorBody?.error?.message || "Nao foi possivel baixar este resultado.";
+          : errorBody?.error?.message || "Não foi possível baixar este resultado.";
       toast.error(message);
       return;
     }
@@ -147,7 +147,7 @@ export function ResultLookupForm() {
           <CardContent>
             {results.length === 0 ? (
               <p className="rounded-xl border border-dashed p-5 text-sm text-muted-foreground">
-                Nao localizamos resultados para os dados informados.
+                Não localizamos resultados para os dados informados.
               </p>
             ) : (
               <div className="space-y-3">

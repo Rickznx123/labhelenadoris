@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   const parsed = portalLookupSchema.safeParse(body);
 
   if (!parsed.success) {
-    return NextResponse.json({ error: "Dados invalidos" }, { status: 400 });
+    return NextResponse.json({ error: "Dados inválidos" }, { status: 400 });
   }
 
   const result = await findPatientExamsByIdentity(parsed.data.cpf, parsed.data.birth_date);

@@ -10,7 +10,7 @@ export async function upsertUserAction(formData: FormData) {
   const supabaseAdmin = getSupabaseAdmin();
   const { user, profile } = await requireAdminSession();
   if (profile.role !== "admin") {
-    throw new Error("Apenas administradores podem gerenciar usuarios.");
+    throw new Error("Apenas administradores podem gerenciar usuários.");
   }
 
   const id = String(formData.get("id") || "");
@@ -23,12 +23,12 @@ export async function upsertUserAction(formData: FormData) {
   });
 
   if (!parsed.success) {
-    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validacao");
+    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validação");
   }
 
   if (!id) {
     if (!parsed.data.password) {
-      throw new Error("Senha obrigatoria para novo usuario.");
+      throw new Error("Senha obrigatória para novo usuário.");
     }
 
     const created = await supabaseAdmin.auth.admin.createUser({
@@ -41,7 +41,7 @@ export async function upsertUserAction(formData: FormData) {
     });
 
     if (created.error || !created.data.user) {
-      throw new Error(created.error?.message ?? "Falha ao criar usuario");
+      throw new Error(created.error?.message ?? "Falha ao criar usuário");
     }
 
     const userId = created.data.user.id;
@@ -110,12 +110,12 @@ export async function deleteUserAction(formData: FormData) {
   const supabaseAdmin = getSupabaseAdmin();
   const { user, profile } = await requireAdminSession();
   if (profile.role !== "admin") {
-    throw new Error("Apenas administradores podem excluir usuarios.");
+    throw new Error("Apenas administradores podem excluir usuários.");
   }
 
   const id = String(formData.get("id") || "");
   if (!id || id === user.id) {
-    throw new Error("Operacao invalida.");
+    throw new Error("Operação inválida.");
   }
 
   const { error } = await supabaseAdmin.auth.admin.deleteUser(id);

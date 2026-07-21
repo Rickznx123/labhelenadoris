@@ -29,7 +29,7 @@ export async function POST(request: Request, { params }: Params) {
     .single();
 
   if (!exam || !exam.pdf_path) {
-    return NextResponse.json({ error: "Arquivo nao encontrado" }, { status: 404 });
+    return NextResponse.json({ error: "Arquivo não encontrado" }, { status: 404 });
   }
 
   let requestedByCpf: string | null = null;
@@ -41,7 +41,7 @@ export async function POST(request: Request, { params }: Params) {
     const body = await request.json();
     const parsed = portalLookupSchema.safeParse(body);
     if (!parsed.success) {
-      return NextResponse.json({ error: "Dados invalidos" }, { status: 400 });
+      return NextResponse.json({ error: "Dados inválidos" }, { status: 400 });
     }
 
     const patient = await supabaseAdmin

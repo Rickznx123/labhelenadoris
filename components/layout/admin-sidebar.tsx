@@ -7,8 +7,8 @@ const nav = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/pacientes", label: "Pacientes", icon: Users },
   { href: "/admin/exames", label: "Exames", icon: FileCheck2 },
-  { href: "/admin/usuarios", label: "Usuarios", icon: UserRound },
-  { href: "/admin/configuracoes", label: "Configuracoes", icon: Settings2 },
+  { href: "/admin/usuarios", label: "Usuários", icon: UserRound },
+  { href: "/admin/configuracoes", label: "Configurações", icon: Settings2 },
 ];
 
 type AdminSidebarProps = {

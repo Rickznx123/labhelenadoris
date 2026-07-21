@@ -10,13 +10,13 @@ import { LAB_INFO } from "@/lib/lab-info";
 
 const differentials = [
   {
-    title: "Seguranca e confiabilidade",
-    description: "Processos rastreaveis e controle rigoroso de qualidade em todas as etapas.",
+    title: "Segurança e confiabilidade",
+    description: "Processos rastreáveis e controle rigoroso de qualidade em todas as etapas.",
     icon: ShieldCheck,
   },
   {
-    title: "Resultados rapidos",
-    description: "Fluxo moderno de analises para entregar laudos com agilidade e precisao.",
+    title: "Resultados rápidos",
+    description: "Fluxo moderno de análises para entregar laudos com agilidade e precisão.",
     icon: Timer,
   },
   {
@@ -26,7 +26,7 @@ const differentials = [
   },
 ];
 
-const examAreas = ["Hematologia", "Bioquimica", "Urinalise", "Parasitologia", "Hormonios", "Microbiologia"];
+const examAreas = ["Hematologia", "Bioquímica", "Urinalise", "Parasitologia", "Hormônios", "Microbiologia"];
 
 export default function HomePage() {
   return (
@@ -34,12 +34,12 @@ export default function HomePage() {
       <section className="relative overflow-hidden py-12 md:py-20">
         <Container className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div className="stagger-enter space-y-6">
-            <Badge className="w-fit bg-secondary text-secondary-foreground">Helena Doris Laboratorio</Badge>
+            <Badge className="w-fit bg-secondary text-secondary-foreground">Helena Doris Laboratório</Badge>
             <h1 className="font-display text-4xl leading-tight text-gray-700 md:text-6xl">
-              Cuidado e precisao para a sua saude.
+              Cuidado e precisão para a sua saúde.
             </h1>
             <p className="max-w-xl text-lg text-muted-foreground">
-              Exames laboratoriais com qualidade, agilidade e seguranca para voce e sua familia.
+              Exames laboratoriais com qualidade, agilidade e segurança para você e sua família.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -56,15 +56,15 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="grid gap-2 pt-2 text-sm md:grid-cols-3">
-              <p className="flex items-center gap-2 rounded-xl border bg-card px-3 py-2"><CheckCircle2 className="h-4 w-4 text-[var(--brand)]" /> Seguranca e confiabilidade</p>
-              <p className="flex items-center gap-2 rounded-xl border bg-card px-3 py-2"><CheckCircle2 className="h-4 w-4 text-[var(--brand)]" /> Resultados rapidos</p>
+              <p className="flex items-center gap-2 rounded-xl border bg-card px-3 py-2"><CheckCircle2 className="h-4 w-4 text-[var(--brand)]" /> Segurança e confiabilidade</p>
+              <p className="flex items-center gap-2 rounded-xl border bg-card px-3 py-2"><CheckCircle2 className="h-4 w-4 text-[var(--brand)]" /> Resultados rápidos</p>
               <p className="flex items-center gap-2 rounded-xl border bg-card px-3 py-2"><CheckCircle2 className="h-4 w-4 text-[var(--brand)]" /> Profissionais qualificados</p>
             </div>
           </div>
           <div className="glass-panel overflow-hidden rounded-3xl border p-2 shadow-[0_18px_44px_rgba(15,23,42,0.08)]">
             <Image
               src="/imagens/imagem.png"
-              alt="Laboratorio moderno"
+              alt="Laboratório moderno"
               width={900}
               height={700}
               className="h-[420px] w-full rounded-2xl object-cover"
@@ -75,7 +75,7 @@ export default function HomePage() {
 
       <section className="py-16">
         <Container className="space-y-10">
-          <SectionTitle eyebrow="Diferenciais" title="Experiencia premium em analises clinicas" />
+          <SectionTitle eyebrow="Diferenciais" title="Experiência premium em análises clínicas" />
           <div className="grid gap-4 md:grid-cols-3">
             {differentials.map((item) => {
               const Icon = item.icon;
@@ -101,7 +101,7 @@ export default function HomePage() {
 
       <section className="py-16">
         <Container className="space-y-10">
-          <SectionTitle eyebrow="Areas de exames" title="Especialidades com controle de qualidade" />
+          <SectionTitle eyebrow="Áreas de exames" title="Especialidades com controle de qualidade" />
           <div className="grid gap-3 md:grid-cols-3">
             {examAreas.map((area) => (
               <Card key={area} className="soft-lift">
@@ -120,10 +120,10 @@ export default function HomePage() {
           <SectionTitle
             eyebrow="Resultados"
             title="Como consultar resultados"
-            description="Acesse a area de resultados, informe CPF e data de nascimento, e baixe seu exame em PDF com seguranca."
+            description="Acesse a área de resultados, informe CPF e data de nascimento, e baixe seu exame em PDF com segurança."
           />
           <div className="mx-auto grid max-w-5xl gap-4 rounded-3xl border bg-card p-5 md:grid-cols-[1fr_auto] md:items-center md:p-8">
-            <p className="text-muted-foreground">Resultado disponivel para download seguro com link temporario.</p>
+            <p className="text-muted-foreground">Resultado disponível para download seguro com link temporário.</p>
             <Button asChild size="lg">
               <Link href="/resultados">Consultar resultados</Link>
             </Button>
@@ -135,7 +135,7 @@ export default function HomePage() {
         <Container>
           <Card className="overflow-hidden">
             <CardHeader>
-              <CardTitle className="font-display text-3xl">Horario de atendimento</CardTitle>
+              <CardTitle className="font-display text-3xl">Horário de atendimento</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-muted-foreground md:grid-cols-2">
               <p className="flex items-center gap-2 rounded-xl bg-muted px-4 py-3"><Clock3 className="h-4 w-4 text-[var(--brand)]" /> {LAB_INFO.hours.weekdays}</p>
@@ -147,7 +147,7 @@ export default function HomePage() {
 
       <section className="py-16">
         <Container className="space-y-10">
-          <SectionTitle eyebrow="Unidades" title="Estamos perto de voce em Alta Floresta - MT" />
+          <SectionTitle eyebrow="Unidades" title="Estamos perto de você em Alta Floresta - MT" />
           <div className="grid gap-4 md:grid-cols-2">
             {LAB_INFO.units.map((unit) => (
               <Card key={unit.id} className="soft-lift">
@@ -178,7 +178,7 @@ export default function HomePage() {
               <div className="flex h-24 w-full items-center justify-center rounded-2xl border bg-secondary text-2xl font-bold text-secondary-foreground">
                 {LAB_INFO.insurance}
               </div>
-              <p className="text-muted-foreground">Atendimento particular e convenio Ampla+.</p>
+              <p className="text-muted-foreground">Atendimento particular e convênio Ampla+.</p>
             </CardContent>
           </Card>
         </Container>

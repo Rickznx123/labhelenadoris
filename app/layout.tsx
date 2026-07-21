@@ -19,19 +19,19 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
   title: {
-    default: `${LAB_INFO.shortName} | Analises Clinicas`,
+    default: `${LAB_INFO.shortName} | Análises Clínicas`,
     template: `%s | ${LAB_INFO.shortName}`,
   },
   description:
-    "Cuidado e precisao para a sua saude. Exames laboratoriais com qualidade, agilidade e seguranca para voce e sua familia.",
+    "Cuidado e precisão para a sua saúde. Exames laboratoriais com qualidade, agilidade e segurança para você e sua família.",
   icons: {
     icon: "/icon.svg",
   },
   openGraph: {
     type: "website",
-    title: `${LAB_INFO.shortName} | Analises Clinicas`,
+    title: `${LAB_INFO.shortName} | Análises Clínicas`,
     description:
-      "Atendimento particular e convenio Ampla+. Resultados online com seguranca.",
+      "Atendimento particular e convênio Ampla+. Resultados online com segurança.",
     url: env.siteUrl,
     siteName: LAB_INFO.shortName,
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${LAB_INFO.shortName} | Analises Clinicas`,
+    title: `${LAB_INFO.shortName} | Análises Clínicas`,
     description:
-      "Exames laboratoriais com qualidade, agilidade e seguranca.",
+      "Exames laboratoriais com qualidade, agilidade e segurança.",
   },
 };
 

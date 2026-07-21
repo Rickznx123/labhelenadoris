@@ -20,7 +20,7 @@ export async function upsertPatientAction(formData: FormData) {
   });
 
   if (!parsed.success) {
-    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validacao");
+    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validação");
   }
 
   if (id) {
@@ -53,7 +53,7 @@ export async function upsertPatientAction(formData: FormData) {
 export async function deletePatientAction(formData: FormData) {
   const { supabase, user, profile } = await requireAdminSession();
   const id = String(formData.get("id") || "");
-  if (!id) throw new Error("ID invalido");
+  if (!id) throw new Error("ID inválido");
 
   const { error } = await supabase.from("patients").delete().eq("id", id);
   if (error) throw new Error(error.message);

@@ -22,9 +22,9 @@ export function UserForm({ user }: UserFormProps) {
         startTransition(async () => {
           try {
             await upsertUserAction(formData);
-            toast.success(user ? "Usuario atualizado." : "Usuario criado.");
+            toast.success(user ? "Usuário atualizado." : "Usuário criado.");
           } catch (error) {
-            toast.error(error instanceof Error ? error.message : "Erro ao salvar usuario.");
+            toast.error(error instanceof Error ? error.message : "Erro ao salvar usuário.");
           }
         });
       }}
@@ -59,7 +59,7 @@ export function UserForm({ user }: UserFormProps) {
         <Input id="password" name="password" type="password" />
       </div>
       <div className="md:col-span-2">
-        <Button type="submit" disabled={pending}>{user ? "Salvar alteracoes" : "Criar usuario"}</Button>
+        <Button type="submit" disabled={pending}>{user ? "Salvar alterações" : "Criar usuário"}</Button>
       </div>
     </form>
   );

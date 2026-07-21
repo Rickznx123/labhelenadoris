@@ -58,7 +58,7 @@ export function PortalForm() {
       });
 
       if (!response.ok) {
-        toast.error("Nao foi possivel consultar seus exames.");
+        toast.error("Não foi possível consultar seus exames.");
         return;
       }
 
@@ -80,7 +80,7 @@ export function PortalForm() {
     });
 
     if (!response.ok) {
-      toast.error("Download indisponivel no momento.");
+      toast.error("Download indisponível no momento.");
       return;
     }
 
@@ -147,7 +147,7 @@ export function PortalForm() {
           <CardContent>
             {result.exams.length === 0 ? (
               <p className="rounded-xl border border-dashed p-6 text-sm text-muted-foreground">
-                Nao encontramos exames para os dados informados. Verifique e tente novamente.
+                Não encontramos exames para os dados informados. Verifique e tente novamente.
               </p>
             ) : (
               <div className="space-y-3">
@@ -169,7 +169,7 @@ export function PortalForm() {
                       onClick={() => handleDownload(exam.id)}
                     >
                       {exam.pdf_path ? <Download className="mr-2 h-4 w-4" /> : <FileText className="mr-2 h-4 w-4" />}
-                      {exam.pdf_path ? "Baixar PDF" : "PDF indisponivel"}
+                      {exam.pdf_path ? "Baixar PDF" : "PDF indisponível"}
                     </Button>
                   </div>
                 ))}

@@ -82,11 +82,11 @@ export function PatientForm({ patient }: PatientFormProps) {
         </select>
       </div>
       <div className="space-y-2 md:col-span-3">
-        <Label htmlFor="notes">Observacoes</Label>
+        <Label htmlFor="notes">Observações</Label>
         <Textarea id="notes" name="notes" defaultValue={patient?.notes ?? ""} />
       </div>
       <div className="md:col-span-3">
-        <Button type="submit" disabled={pending}>{patient ? "Salvar alteracoes" : "Cadastrar paciente"}</Button>
+        <Button type="submit" disabled={pending}>{patient ? "Salvar alterações" : "Cadastrar paciente"}</Button>
       </div>
     </form>
   );

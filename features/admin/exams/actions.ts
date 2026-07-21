@@ -35,7 +35,7 @@ export async function upsertExamAction(formData: FormData) {
   });
 
   if (!parsed.success) {
-    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validacao");
+    throw new Error(parsed.error.issues[0]?.message ?? "Erro de validação");
   }
 
   let pdfPath: string | undefined;
@@ -104,7 +104,7 @@ export async function deleteExamAction(formData: FormData) {
   const supabaseAdmin = getSupabaseAdmin();
   const { supabase, user, profile } = await requireAdminSession();
   const id = String(formData.get("id") || "");
-  if (!id) throw new Error("ID invalido");
+  if (!id) throw new Error("ID inválido");
 
   const { data: exam } = await supabase
     .from("exams")

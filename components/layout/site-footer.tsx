@@ -5,10 +5,10 @@ import { BrandLogo } from "@/components/brand-logo";
 import { LAB_INFO } from "@/lib/lab-info";
 
 const links = [
-  { href: "/", label: "Inicio" },
+  { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre" },
   { href: "/exames", label: "Exames" },
-  { href: "/convenios", label: "Convenios" },
+  { href: "/convenios", label: "Convênios" },
   { href: "/unidades", label: "Unidades" },
   { href: "/contato", label: "Contato" },
   { href: "/resultados", label: "Resultados" },
@@ -21,7 +21,7 @@ export function SiteFooter() {
         <div>
           <BrandLogo size="sm" href="/" />
           <p className="mt-2 text-sm text-muted-foreground">
-            Cuidado e precisao para a sua saude com atendimento humanizado e estrutura moderna.
+            Cuidado e precisão para a sua saúde com atendimento humanizado e estrutura moderna.
           </p>
         </div>
         <div>
@@ -37,7 +37,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="font-medium">Horarios</h4>
+          <h4 className="font-medium">Horários</h4>
           <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground"><Clock3 className="h-4 w-4 text-[var(--brand)]" /> {LAB_INFO.hours.weekdays}</p>
           <p className="flex items-center gap-2 text-sm text-muted-foreground"><Clock3 className="h-4 w-4 text-[var(--brand)]" /> {LAB_INFO.hours.saturday}</p>
         </div>

@@ -27,10 +27,10 @@ export function ForgotForm() {
     setLoading(false);
 
     if (error) {
-      toast.error("Nao foi possivel enviar o email.");
+      toast.error("Não foi possível enviar o e-mail.");
       return;
     }
-    toast.success("Email de recuperacao enviado.");
+    toast.success("E-mail de recuperação enviado.");
   }
 
   return (

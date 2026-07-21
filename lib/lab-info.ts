@@ -1,6 +1,6 @@
 export const LAB_INFO = {
-  name: "Helena Doris Laboratorio de Analises Clinicas",
-  shortName: "Helena Doris Laboratorio",
+  name: "Helena Doris Laboratório de Análises Clínicas",
+  shortName: "Helena Doris Laboratório",
   whatsappMain: "5566992838000",
   whatsappMainDisplay: "(66) 99283-8000",
   phoneMainDisplay: "(66) 99283-8000",

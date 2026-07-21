@@ -11,7 +11,7 @@ export default function ForgotPasswordPage() {
           <CardTitle className="text-center font-display text-3xl">Em breve</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
-          <p className="text-muted-foreground">A area interna ainda nao esta disponivel.</p>
+          <p className="text-muted-foreground">A área interna ainda não está disponível.</p>
           <Button asChild className="mt-6">
             <Link href="/">Voltar para o site</Link>
           </Button>

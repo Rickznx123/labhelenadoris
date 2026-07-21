@@ -6,10 +6,10 @@ import { BrandLogo } from "@/components/brand-logo";
 import { LAB_INFO } from "@/lib/lab-info";
 
 const links = [
-  { href: "/", label: "Inicio" },
+  { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre" },
   { href: "/exames", label: "Exames" },
-  { href: "/convenios", label: "Convenios" },
+  { href: "/convenios", label: "Convênios" },
   { href: "/unidades", label: "Unidades" },
   { href: "/contato", label: "Contato" },
   { href: "/resultados", label: "Resultados" },

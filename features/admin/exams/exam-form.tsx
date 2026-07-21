@@ -45,7 +45,7 @@ export function ExamForm({ exam, patients }: ExamFormProps) {
           className="flex h-10 w-full rounded-xl border border-input bg-background px-3 text-sm"
         >
           <option value="pending">Pendente</option>
-          <option value="completed">Concluido</option>
+          <option value="completed">Concluído</option>
         </select>
       </div>
       <div className="space-y-2 md:col-span-2">
@@ -72,11 +72,11 @@ export function ExamForm({ exam, patients }: ExamFormProps) {
         <Input id="pdf" name="pdf" type="file" accept="application/pdf" />
       </div>
       <div className="space-y-2 md:col-span-3">
-        <Label htmlFor="notes">Observacoes</Label>
+        <Label htmlFor="notes">Observações</Label>
         <Textarea id="notes" name="notes" defaultValue={exam?.notes ?? ""} />
       </div>
       <div className="md:col-span-3">
-        <Button type="submit" disabled={pending}>{exam ? "Salvar alteracoes" : "Cadastrar exame"}</Button>
+        <Button type="submit" disabled={pending}>{exam ? "Salvar alterações" : "Cadastrar exame"}</Button>
       </div>
     </form>
   );
